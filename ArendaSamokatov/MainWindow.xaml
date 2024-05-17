@@ -1,0 +1,194 @@
+﻿<Window x:Class="ArendaSamokatov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArendaSamokatov"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        >
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+           <!--Nav Border-->
+        <Border CornerRadius="15"           
+                BorderThickness="0">
+
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#9BBC9B"/>
+                    <GradientStop Color="#048282" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+            <!--Navigation Menu-->
+            <Border CornerRadius="15 0 0 15"
+                        Grid.Column="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6AA993"/>
+                        <GradientStop Color="#FF62A691" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10 10 10 10"
+                                Width="200"
+                                Height="50"
+                                VerticalAlignment="Top">
+                        <Image Source="/Res/Logo.png"
+                               Width="35"
+                               HorizontalAlignment="Left"
+                               Margin="10 0 0 0"
+                               />
+                        <TextBlock Text="WheelWander"
+                                   Height="25"
+                                   TextAlignment="Center"
+                                   FontSize="16"
+                                   Margin="20 0 0 0"/>
+                    </StackPanel>
+
+                    <RadioButton x:Name="BtnAccount"
+                             Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color1}"
+                             Margin="0 60 0 0"
+                             Click="BtnAccount_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Личный кабинет" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton x:Name="BtnCatalogue"
+                             Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color2}"
+                             Margin="0 30 0 0"
+                             Click="BtnCatalogue_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="List" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Каталог" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton x:Name="BtnCart"
+                             Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color3}"
+                             Margin="0 30 0 0"
+                             Click="BtnCart_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="CartShopping" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Корзина" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+            </Border>
+        </Border>
+        
+        <!--MainMenu-->
+        <Border CornerRadius="0 15 15 0"
+            Grid.Column="1">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF72AC94"/>
+                    <GradientStop Color="#FF1C8B86" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+
+                <Button x:Name="btnMin"
+                        Content="-"
+                        FontSize="15"
+                        Grid.Column="1"
+                        Cursor="Hand"
+                        BorderThickness="0"                 
+                        Click="btnMin_Click"
+                        Foreground="WhiteSmoke" 
+                        FontFamily="Montserrat"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 30 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Aqua"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightSlateGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="20" Height="20"
+                                    CornerRadius="7"
+                                    Background="{TemplateBinding Background}"
+                    >
+                                <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnClose"
+                        Content="x"
+                        FontSize="15"
+                        FontFamily="Montserrat"
+                        Grid.Column="2"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Click="btnClose_Click"
+                        Foreground="WhiteSmoke"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 5 0">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="MediumVioletRed"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="IndianRed"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="20" Height="20"
+                    CornerRadius="7"
+                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Frame x:Name="MainFrame"
+                       Grid.Row="1"
+                       NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+
+
+</Window>

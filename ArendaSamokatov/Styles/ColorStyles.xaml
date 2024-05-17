@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Color Palette-->
+    <SolidColorBrush x:Key="color1" Color="#048282"/>
+    <SolidColorBrush x:Key="color2" Color="#048302"/>
+    <SolidColorBrush x:Key="color3" Color=" #1E5945"/>
+
+    <!--Font Colors-->
+    <SolidColorBrush x:Key="titleColor1" Color="#E0E1F1"/>
+    <SolidColorBrush x:Key="titleColor2" Color="#D5CFF5"/>
+    <SolidColorBrush x:Key="titleColor3" Color="#3EB489"/>
+    <SolidColorBrush x:Key="plainTextColor1" Color="#9497CD"/>
+    <SolidColorBrush x:Key="plainTextColor2" Color="#7C80C2"/>
+    <SolidColorBrush x:Key="plainTextColor3" Color="#D0F0C0"/>
+    <!--Panel Colors-->
+    <SolidColorBrush x:Key="panelColor" Color="#50C878"/>
+    <SolidColorBrush x:Key="panelOverColor" Color="#287233"/>
+    <SolidColorBrush x:Key="panelActiveColor" Color="#ACE1AF"/>
+
+</ResourceDictionary>

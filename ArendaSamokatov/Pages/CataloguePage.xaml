@@ -1,0 +1,110 @@
+﻿<Page x:Class="ArendaSamokatov.Pages.CataloguePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ArendaSamokatov.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700"
+      Title="CataloguePage">
+    <Page.Resources>
+        <!-- Стиль для рамки каждого элемента -->
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="10"/>
+
+        </Style>
+        <!-- Стиль для заголовка самоката -->
+        <Style TargetType="TextBlock" x:Key="TitleTextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#333"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+        <!-- Стиль для текста характеристик самоката -->
+        <Style TargetType="TextBlock" x:Key="DetailTextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#666"/>
+            <Setter Property="Margin" Value="0,0,0,3"/>
+        </Style>
+        <!-- Стиль для кнопки -->
+        <Style TargetType="Button" x:Key="CartButton">
+            <Setter Property="Background" Value="#4CAF50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <!--<Setter Property="CornerRadius" Value="5"/>-->
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal">
+            <TextBlock Text="Каталог"
+                       FontSize="18"
+                       Foreground="#D0F0C0">
+            </TextBlock>
+
+            <Button x:Name="BtnAddScooter"
+                    Margin="400 0 0 0"
+                    Width="170"
+                    Background="#FF157152"
+                    Content="Добавить самокат"                   
+                    FontFamily="Montserrat"
+                    FontSize="18"
+                    Foreground="#D0F0C0"
+                    FontWeight="Medium"
+                    BorderBrush="#FF157152"
+                    Click="BtnAddScooter_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" 
+                                            Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+     
+
+        <ListView x:Name="LvCatalogue" d:ItemsSource="{d:SampleData ItemCount=5}"
+                          Background="Transparent" BorderThickness="0" Padding="10"
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="100" Height="100" Margin="10">
+                                <Image.Source>
+                                    <Binding Path="PhotoPath"></Binding>
+                                </Image.Source>
+                            </Image>
+                            <StackPanel Margin="10" Width="350">
+                                <TextBlock Text="{Binding ModelName}" Style="{StaticResource TitleTextBlock}"/>
+                                <TextBlock Text="{Binding MaxSpeedInKm, StringFormat='Максимальная скорость: {0} км/ч'}" Style="{StaticResource DetailTextBlock}"/>
+                                <TextBlock Text="{Binding Weight, StringFormat='Вес: {0} кг'}" Style="{StaticResource DetailTextBlock}"/>
+                                <TextBlock Text="{Binding MiliageOnASingleCharge, StringFormat='Расстояние: {0} км'}" Style="{StaticResource DetailTextBlock}"/>
+                            </StackPanel>
+                            <Button x:Name="BtnAddCart" Content="Добавить в корзину" Style="{StaticResource CartButton}"
+                                        Margin="-30 0 0 0"
+                                        Click="BtnAddCart_Click"
+                                    />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

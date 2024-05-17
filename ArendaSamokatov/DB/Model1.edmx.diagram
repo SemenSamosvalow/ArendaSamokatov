@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e660c564fa54ff897ba18a7d526363a" Name="Diagram1">
+        <EntityTypeShape EntityType="VehicleRentModel.Client" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.DeliveryType" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Employee" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Manufacturer" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Order" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Payment" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.PaymentMethod" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Review" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Scooter" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.ScooterPhoto" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.Tariff" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehicleRentModel.VehicleTariff" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="VehicleRentModel.FK_Client_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Order_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Order_DeliveryType" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Vehicle_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Order_VehicleTariff" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Payment_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Review_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_Payment_PaymentMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_VehiclePhoto_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_VehicleTariff_Vehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="VehicleRentModel.FK_VehicleTariff_Tariff" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
